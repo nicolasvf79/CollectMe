@@ -26,6 +26,12 @@ var con = mysql.createConnection({
         });
     });
 })*/
+
+app.get('/', (req, res) =>
+{
+    res.status(201).json({message: 'Hello !'})
+});
+
 app.get('/allUsers', (req, res) =>
 {
     con.query("SELECT * FROM user", function (err, result) {
